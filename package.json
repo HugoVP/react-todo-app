@@ -1,0 +1,48 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "Simple react app",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start",
+    "start": "node server.js"
+  },
+  "author": "Hugo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugovp/react-foundation-boilerplate.git"
+  },
+  "dependencies": {
+    "axios": "^0.15.2",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.23.1",
+    "expect": "^1.20.2",
+    "foundation-sites": "^6.2.0",
+    "jquery": "^2.2.1",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.2.0",
+    "karma-mocha-reporter": "^2.2.0",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.1.2",
+    "node-sass": "^3.10.1",
+    "react-addons-test-utils": "^15.3.2",
+    "sass-loader": "^4.0.2",
+    "script-loader": "^0.6.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.13.2"
+  }
+}
