@@ -10,7 +10,7 @@ const TodoApp  = React.createClass({
         },
         {
           id   : 2,
-          text : 'Clear the yard',
+          text : 'Clean the yard',
         },
         {
           id   : 3,
