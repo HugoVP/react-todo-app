@@ -8,7 +8,7 @@ const TodoAPI = {
   },
   getTodos: function () {
     const stringTodos = localStorage.todos;
-    var todos = [];
+    var todos         = [];
     try {
       todos = JSON.parse(stringTodos);
     } catch (err) {
