@@ -15,10 +15,10 @@ describe('TodoApp', () => {
   	todoApp.handleAddTodo(todoText);
   	expect(todoApp.state.todos[0].text).toBe(todoText);
   });
-  it('should toggled completed value when handdleToggle called', () => {
+  it('should toggled completed value when handleToggle called', () => {
     const todoData = {
       id        : 12,
-      test      : 'Todo test',
+      text      : 'Todo test',
       completed : false,
     };
     const todoApp = TestUtils.renderIntoDocument(<TodoApp/>);
