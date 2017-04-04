@@ -16,16 +16,39 @@ describe('TodoApp', () => {
   	expect(todoApp.state.todos[0].text).toBe(todoText);
   });
   it('should toggled completed value when handleToggle called', () => {
-    const todoData = {
-      id        : 12,
-      text      : 'Todo test',
-      completed : false,
-    };
+    const todos = [
+      {
+        id          : 12,
+        text        : 'Todo test',
+        completed   : false,
+        createdAt   : 0,
+        completedAt : null,
+      },
+    ];
     const todoApp = TestUtils.renderIntoDocument(<TodoApp/>);
-    todoApp.setState({ todos: [ todoData ] });
-    const todoEl = todoApp.state.todos[0];
-    expect(todoEl.completed).toBe(false);
-    todoApp.handleToggle(todoData.id);
-    expect(todoEl.completed).toBe(true);
+    todoApp.setState({ todos: todos });
+    const todo = todoApp.state.todos[0];
+    expect(todo.completed).toBe(false);
+    todoApp.handleToggle(todo.id);
+    expect(todo.completed).toBe(true);
+    expect(todo.completedAt).toBeA('number');
+  });
+  it('should toggle todo from completed to incompleted', () => {
+    const todos     = [
+      {
+        id          : 12,
+        text        : 'Todo test',
+        completed   : true,
+        createdAt   : 0,
+        completedAt : 0,
+      },
+    ];
+    const todoApp = TestUtils.renderIntoDocument(<TodoApp/>)
+    todoApp.setState({ todos: todos });
+    const todo = todoApp.state.todos[0];
+    expect(todo.completed).toBe(true);
+    todoApp.handleToggle(todo.id);
+    expect(todo.completed).toBe(false);
+    expect(todo.completedAt).toNotExist();
   });
 });

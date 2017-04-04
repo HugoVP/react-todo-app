@@ -9,11 +9,13 @@ describe('TodoAPI', () => {
   });
   describe('setTodos', () => {
     it('should set valid todos array', () => {
-      const todos = [{
-        id        : 23,
-        text      : 'test all files',
-        completed : false,
-      }];
+      const todos = [
+        {
+          id        : 23,
+          text      : 'test all files',
+          completed : false,
+        }
+      ];
       TodoAPI.setTodos(todos);
       const actualTodos = JSON.parse(localStorage.todos);
       expect(actualTodos).toEqual(todos);
@@ -30,11 +32,13 @@ describe('TodoAPI', () => {
       expect(actualTodos).toEqual([]);
     });
     it('should return todo if valid array in localStorage', () => {
-      const todos = [{
-        id        : 23,
-        text      : 'test all files',
-        completed : false,
-      }];
+      const todos = [
+        {
+          id        : 23,
+          text      : 'test all files',
+          completed : false,
+        }
+      ];
       localStorage.todos = JSON.stringify(todos);
       const actualTodos  = TodoAPI.getTodos();
       expect(actualTodos).toEqual(todos);
