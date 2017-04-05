@@ -16,19 +16,20 @@ module.exports = {
             'jQuery' : 'jquery',
         }),
     ],
-    output : {
+    output: {
         path     : __dirname,
         filename : './public/bundle.js',
     },
-    resolve : {
-        root  : __dirname,
+    resolve: {
+        root: __dirname,
         modulesDirectories: [
             'node_modules',
             './app/components',
             './app/api',
         ],
         alias: {
-            AppStyles: 'app/styles/app.scss',
+            AppStyles : 'app/styles/app.scss',
+            actions   : 'app/actions/actions.jsx',
         },
         extensions : ['', '.js', '.jsx'],
     },

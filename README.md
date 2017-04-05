@@ -1,1 +1,1 @@
-# react-timer-app
+# redux-boilerplate
