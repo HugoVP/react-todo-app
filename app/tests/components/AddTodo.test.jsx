@@ -3,7 +3,8 @@ const ReactDOM  = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
 const expect    = require('expect');
 const $         = require('jquery');
-import { AddTodo } from 'AddTodo';
+import { startAddTodo } from 'actions';
+import { AddTodo }      from 'AddTodo';
 describe('AddTodo', () => {
   it('should exists', () => {
     expect(AddTodo).toExist();
@@ -14,11 +15,8 @@ describe('AddTodo', () => {
   	const $el      = $(ReactDOM.findDOMNode(addTodo));
   	const form     = $el.find('form')[0];
   	const todoText = 'Check mail';
-    const action   = {
-      type : 'ADD_TODO',
-      text : todoText,
-    };
-  	addTodo.refs.todoText.value = todoText;
+    const action   = startAddTodo(todoText);
+    addTodo.refs.todoText.value = todoText;
   	TestUtils.Simulate.submit(form);
   	expect(spy).toHaveBeenCalledWith(action);
   });
