@@ -1,21 +1,6 @@
 import $ from 'jquery';
+// class TodoAPI {
 const TodoAPI = {
-  setTodos (todos) {
-    if ($.isArray(todos)) {
-      localStorage.todos = JSON.stringify(todos);
-      return todos;
-    }
-  },
-  getTodos () {
-    const stringTodos = localStorage.todos;
-    var todos         = [];
-    try {
-      todos = JSON.parse(stringTodos);
-    } catch (err) {
-      console.log(err);
-    }
-    return $.isArray(todos) ? todos : [];
-  },
   filterTodos (todos, showCompleted, searchText) {
     var filteredTodos = todos;
     // Filter by showCompleted
