@@ -37,7 +37,7 @@ describe('Reducers', () => {
       expect(res.length).toBe(1);
       expect(res[0]).toEqual(action.todo);
     });
-    it('should toggle todo', () => {
+    it('should update todo', () => {
       const todos = [
         {
           id          : '123',
@@ -47,14 +47,20 @@ describe('Reducers', () => {
           completedAt : '321',
         },
       ];
+      const updates = {
+        completed   : false,
+        completedAt : null,
+      };
       const action = {
-        type : 'TOGGLE_TODO',
+        type : 'UPDATE_TODO',
         id   : '123',
+        updates,
       };
       const res = reducers.todosReducer(df(todos), df(action));
       console.log(res);
-      expect(res[0].completed).toBe(false);
-      expect(res[0].completedAt).toNotExist();
+      expect(res[0].completed).toEqual(updates.completed);
+      expect(res[0].completedAt).toEqual(updates.completedAt);
+      expect(res[0].text).toEqual(todos[0].text);
     });
     it('should add existing todos', () => {
       const todos = [

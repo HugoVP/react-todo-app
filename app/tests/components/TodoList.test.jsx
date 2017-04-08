@@ -28,9 +28,7 @@ describe('TodoList', () => {
         createdAt   : 123,
       },
     ];
-    const store = configure({
-      todos,
-    });
+    const store    = configure({ todos });
     const provider = TestUtils.renderIntoDocument(
       <Provider store={ store }>
         <ConnectedTodoList/>

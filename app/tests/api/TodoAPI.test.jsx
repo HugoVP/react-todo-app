@@ -1,5 +1,5 @@
-const expect  = require('expect');
-const TodoAPI = require('TodoAPI');
+import expect  from 'expect';
+import TodoAPI from 'TodoAPI';
 describe('TodoAPI', () => {
   beforeEach(() => {
     delete localStorage.todos;

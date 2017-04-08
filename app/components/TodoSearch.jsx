@@ -1,4 +1,4 @@
-const React      = require('react');
+import * as React   from 'react';
 import { connect }  from 'react-redux';
 import * as actions from 'actions';
 export const TodoSearch = React.createClass({

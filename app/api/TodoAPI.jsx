@@ -1,4 +1,4 @@
-const $       = require('jquery');
+import $ from 'jquery';
 const TodoAPI = {
   setTodos (todos) {
     if ($.isArray(todos)) {
@@ -37,4 +37,4 @@ const TodoAPI = {
     return filteredTodos;
   }
 };
-module.exports = TodoAPI;
+export default TodoAPI;
