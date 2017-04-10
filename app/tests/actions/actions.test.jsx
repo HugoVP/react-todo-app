@@ -39,6 +39,7 @@ describe('Actions', () => {
     const todoText = 'My todo item';
     store.dispatch(actions.startAddTodo(todoText)).then(() => {
       const actions = store.getActions();
+      expect(actions.length).toBeGreaterThanOrEqualTo(1);
       expect(actions[0]).toInclude({ type: 'ADD_TODO' });
       expect(actions[0].todo).toInclude({ text: todoText });
       done();

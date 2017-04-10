@@ -5,8 +5,8 @@ const TestUtils = require('react-addons-test-utils');
 const expect    = require('expect');
 const $         = require('jquery');
 const configureStore = require('configureStore')
-const TodoApp        = require('TodoApp');
-import TodoList from 'TodoList';
+import { TodoApp } from 'TodoApp';
+import TodoList    from 'TodoList';
  describe('TodoApp', () => {
   it('should exists', () => {
     expect(TodoApp).toExist();
