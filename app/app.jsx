@@ -7,15 +7,16 @@ import firebase from 'app/firebase';
 import router from 'app/router'
 const store = require('configureStore').configure();
 firebase.auth().onAuthStateChanged((user) => {
+  console.log(user);
   if (user) {
     store.dispatch(login(user.id));
+    store.dispatch(startAddTodos());
     hashHistory.push('todos');
   } else {
     store.dispatch(logout());
     hashHistory.push('/')
   }
 });
-store.dispatch(startAddTodos());
 // $(document).foundation(); // Load Foundation
 require('style!css!sass!appStyles'); // App css
 ReactDOM.render(
