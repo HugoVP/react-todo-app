@@ -10,7 +10,7 @@ const config = {
 try {
   firebase.initializeApp(config);
 } catch (err) {
-  console.log(err);
+  console.log('err: ', err);
 }
 export const githubProvider = new firebase.auth.GithubAuthProvider();
 export const firebaseRef    = firebase.database().ref();

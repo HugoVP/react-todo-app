@@ -55,7 +55,6 @@ describe('Reducers', () => {
         updates,
       };
       const res = reducers.todosReducer(df(todos), df(action));
-      console.log(res);
       expect(res[0].completed).toEqual(updates.completed);
       expect(res[0].completedAt).toEqual(updates.completedAt);
       expect(res[0].text).toEqual(todos[0].text);

@@ -33,7 +33,7 @@ export const startAddTodo = (text) => {
         ...todo,
       }));
     }).catch(() => {
-      console.log('fail');
+      console.log('err: ', err);
     });
   };
 };
@@ -78,7 +78,7 @@ export const startToggleTodo = (id, completed) => {
     return todoRef.update(updates).then(() => {
       dispatch(updateTodo(id, updates));
     }).catch((err) => {
-      console.log(err);
+      console.log('err: ', err);
     });
   };
 };
@@ -91,9 +91,9 @@ export const login = (uid) => {
 export const startLogin = () => {
   return (dispatch, getState) => {
     return firebase.auth().signInWithPopup(githubProvider).then((result) => {
-      console.log(`Auth worked!, ${ result }`);
+      console.log(`Auth worked!`, result);
     }).catch((err) => {
-      console.log(`err: ${ err }`);
+      console.log('err: ', err);
     });
   };
 };
@@ -107,7 +107,7 @@ export const startLogout = () => {
     return firebase.auth().signOut().then(() => {
       console.log('Logged out');
     }).catch((err) => {
-      console.log(`err: ${ err }`);
+      console.log('err: ', err);
     });
   };
 };

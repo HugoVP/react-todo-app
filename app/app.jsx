@@ -7,7 +7,6 @@ import firebase from 'app/firebase';
 import router from 'app/router'
 const store = require('configureStore').configure();
 firebase.auth().onAuthStateChanged((user) => {
-  console.log(user);
   if (user) {
     store.dispatch(login(user.id));
     store.dispatch(startAddTodos());
