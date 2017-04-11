@@ -8,7 +8,7 @@ import router from 'app/router'
 const store = require('configureStore').configure();
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    store.dispatch(login(user.id));
+    store.dispatch(login(user.uid));
     store.dispatch(startAddTodos());
     hashHistory.push('todos');
   } else {
