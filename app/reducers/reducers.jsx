@@ -37,6 +37,8 @@ export const todosReducer = (state = [], action) => {
         }
         return todo;
       });
+    case 'LOGOUT':
+      return [];
     default:
       return state;
   }
