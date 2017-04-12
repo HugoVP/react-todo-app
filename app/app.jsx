@@ -5,7 +5,8 @@ import { Route, Router, IndexRoute, hashHistory } from 'react-router';
 import { login, logout, startAddTodos } from 'actions';
 import firebase from 'app/firebase';
 import router from 'app/router'
-const store = require('configureStore').configure();
+import { configure } from 'configureStore';
+const store = configure();
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.dispatch(login(user.uid));

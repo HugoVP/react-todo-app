@@ -1,26 +1,31 @@
-import * as React   from 'react';
-import { connect }  from 'react-redux';
-import * as actions from 'actions';
-export const AddTodo = React.createClass({
-// export class AddTodo extends React.Component {
-  // handleSubmit: function (event) {
-  handleSubmit(event) {
+import React from 'react';
+import { connect } from 'react-redux';
+import { startAddTodo } from 'actions';
+export class AddTodo extends React.Component {
+  constructor (props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit (event) {
     event.preventDefault();
     const { dispatch } = this.props;
-    const todoText     = this.refs.todoText.value;
+    const todoText = this.todoText.value;
     if (todoText.length > 0) {
-      this.refs.todoText.value = '';
-      dispatch(actions.startAddTodo(todoText));
+      this.todoText.value = '';
+      dispatch(startAddTodo(todoText));
     } else {
-      this.refs.todoText.focus();
+      this.todoText.focus();
     }
-  },
-  // render: function () {
+  }
   render() { 
     return (
       <div className="container__footer">
-        <form onSubmit={ this.handleSubmit }>
-          <input type="text" ref="todoText" placeholder="What do you need to do?"/>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type        = "text"
+            ref         = {(ref) => { this.todoText = ref; }}
+            placeholder = "What do you need to do?"
+          />
           <button className="button expanded">
             Add Todo
           </button>
@@ -28,7 +33,5 @@ export const AddTodo = React.createClass({
 			</div>
     );
 	}
-// }
-});
-// export AddTodo;
+}
 export default connect()(AddTodo);

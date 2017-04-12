@@ -1,4 +1,7 @@
-import firebase, { firebaseRef, githubProvider } from 'app/firebase';
+import firebase, {
+  firebaseRef,
+  githubProvider
+} from 'app/firebase';
 import moment from 'moment';
 export const setSearchText = (searchText) => {
   return {

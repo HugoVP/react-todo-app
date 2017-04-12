@@ -1,9 +1,9 @@
-import * as React  from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import moment      from 'moment';
+import moment from 'moment';
 import { startToggleTodo } from 'actions';
-export const Todo = React.createClass({
-  render: function () {
+export class Todo extends React.Component {
+  render () {
     const { id, text, completed, createdAt, completedAt, dispatch } = this.props;
     const todoClassName = completed ? 'todo todo-completed' : 'todo';
     const renderDate = () => {
@@ -31,6 +31,6 @@ export const Todo = React.createClass({
         </div>
       </div>
     );
-  },
-});
+  }
+}
 export default connect()(Todo);

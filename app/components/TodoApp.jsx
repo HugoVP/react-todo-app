@@ -4,12 +4,16 @@ import TodoSearch from 'TodoSearch';
 import TodoList from 'TodoList';
 import AddTodo from 'AddTodo';
 import { startLogout } from 'actions';
-export const TodoApp = React.createClass({
+export class TodoApp extends React.Component {
+  constructor (props) {
+    super(props);
+    this.onLogout = this.onLogout.bind(this);
+  }
   onLogout (event) {
     const { dispatch } = this.props;
     event.preventDefault();
     dispatch(startLogout());
-  },
+  }
   render() {
     return (
       <div>
@@ -33,5 +37,5 @@ export const TodoApp = React.createClass({
       </div>
     );
   }
-});
+}
 export default connect()(TodoApp);

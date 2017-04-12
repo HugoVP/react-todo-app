@@ -1,9 +1,9 @@
-import * as React     from 'react';
-import * as ReactDOM  from 'react-dom';
-import * as TestUtils from 'react-addons-test-utils';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactTestUtils from 'react-addons-test-utils';
 import expect from 'expect';
-import $      from 'jquery';
-import { Todo }            from 'Todo';
+import $ from 'jquery';
+import { Todo } from 'Todo';
 import { startToggleTodo } from 'actions';
 describe('Todo', () => {
   it('should exists', () => {
@@ -18,10 +18,10 @@ describe('Todo', () => {
       completedAt : null,
     };
     const action = startToggleTodo(todo.id, !todo.completed);
-    const spy   = expect.createSpy();
-    const cTodo = TestUtils.renderIntoDocument(<Todo { ...todo } dispatch={ spy }/>);
-    const $el   = $(ReactDOM.findDOMNode(cTodo))[0];
-    TestUtils.Simulate.click($el);
+    const spy    = expect.createSpy();
+    const cTodo  = ReactTestUtils.renderIntoDocument(<Todo {...todo} dispatch={spy} />);
+    const $el    = $(ReactDOM.findDOMNode(cTodo));
+    ReactTestUtils.Simulate.click($el[0]);
     expect(spy).toHaveBeenCalledWith(action);
   });
 });

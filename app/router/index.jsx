@@ -1,5 +1,10 @@
 import React from 'react';
-import { Route, Router, IndexRoute, hashHistory } from 'react-router';
+import {
+  Route,
+  Router,
+  IndexRoute,
+  hashHistory
+} from 'react-router';
 import firebase from 'app/firebase';
 import TodoApp from 'TodoApp';
 import Login from 'Login';
@@ -22,4 +27,4 @@ export default (
       <IndexRoute component={ Login } onEnter={ redirectIfLoggedIn }/>
     </Route>
   </Router>
-)
+);

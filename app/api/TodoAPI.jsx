@@ -8,7 +8,7 @@ const TodoAPI = {
     // Filter by searchText
     filteredTodos = filteredTodos.filter((todo) => {
       const todoText = todo.text.toLowerCase();
-      return searchText.length === 0 || todoText.indexOf(searchText) > -1;
+      return searchText.length === 0 || todoText.indexOf(searchText.toLowerCase()) > -1;
     });
     // Sort todos with non-completed first
     filteredTodos.sort((a, b) => {
